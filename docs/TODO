@@ -1,0 +1,31 @@
+Desenvolver um sistema para listagem de repositórios do Github.
+
+Descrição:
+
+OK - O sistema deve ter uma página listando os repositórios do candidato (você);
+OK - O sistema deve ter uma página com um campo de busca, listando repositórios públicos filtrados
+pelo nome do repositório utilizando o termo informado.
+OK - A listagem de repositórios deve exibir o usuário (owner), o nome do repositório, a linguagem,
+o número de forks/stars.
+OK - Os dados devem ser obtidos usando a API pública do Github
+OK - O framework utilizado deve ser o Angular
+
+
+O que será avaliado:
+
+Clareza e padrões do código
+Arquitetura e organização do projeto
+Utilização dos recursos do framework Angular
+
+
+Quer ganhar pontos extras?
+
+OK - Gere uma versão de produção dos seus arquivos
+OK - Publique em uma estrutura de nuvem (pode ser até o Github Pages)
+OK - Versione seu código
+OK - Faça os testes
+OK - Mostre o que você sabe de layout/css, ou fique a vontade para usar qualquer framework CSS;
+
+
+
+O prazo para entrega do desafio é até dia 08/12 às 23:59hrs.

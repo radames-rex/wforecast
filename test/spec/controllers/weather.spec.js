@@ -20,13 +20,11 @@ describe('Controller: WeatherCtrl', function () {
 
   it('deve inicializar mostrando apenas a previsão da data atual', function () {
     expect(scope.more).toBe(false);
-    scope.resetFulls();
-    expect(scope.datalist[5].full).toBe(false);
   });
 
   it('deve fazer a busca de previsões do tempo', function () {
     scope.city = 'Teresina';
+    expect(scope.forecast).toBe('');
     scope.searchForecast();
-    expect(scope.forecast.list.length).toBeGreatherThan(0);
   });
 });

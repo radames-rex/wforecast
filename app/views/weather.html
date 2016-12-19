@@ -23,22 +23,45 @@
   </div>
   <md-list>
     <!-- <md-list-item class="md-3-line" ng-repeat="item in repos | filter:ignoreAccents"> -->
-    <md-list-item class="md-3-line" ng-show="forecast != ''">
-      <img ng-src="http://openweathermap.org/img/w/{{forecast.weather[0].icon}}.png" alt="Weather" class="md-avatar">
+    <md-list-item class="md-3-line" ng-show="forecast != '' && !more">
+      <img ng-src="http://openweathermap.org/img/w/{{forecast.list[0].weather[0].icon}}.png" alt="Weather" class="md-avatar">
 
       <div class="md-list-item-text">
         <h3>
           <i class="fa fa-map-marker" aria-hidden="true"></i>
-          {{forecast.name}}
-          (<small>{{forecast.sys.country}}</small>)</h3>
+          {{forecast.city.name}}
+          (<small>{{forecast.city.country}}</small>)</h3>
 
         <p>
           <i class="fa fa-cloud" aria-hidden="true"></i>
-          {{'city.weather' | translate}} {{forecast.weather[0].description}}
+          {{'city.weather' | translate}} {{forecast.list[0].weather[0].description}}
           <i class="fa fa-clock-o" aria-hidden="true"></i>
-          {{'city.time' | translate}} {{date}}
+          {{'city.time' | translate}} {{forecast.list[0].dt_txt}}
           <i class="fa fa-thermometer-half " aria-hidden="true"></i>
-          {{'city.temperature' | translate}} {{forecast.main.temp}}
+          {{'city.temperature' | translate}} {{forecast.list[0].main.temp}} Graus {{(temperature == 'metric' ? 'Celsius' :'Fahrenheit')}}
+        </p>
+      </div>
+      <md-divider inset></md-divider>
+    </md-list-item>
+    <div class="wforecast__results--divider" ng-show="!more">
+      <md-button class="md-raised md-primary" ng-click="more=true">Próximos Dias</md-button>
+    </div>
+    <md-list-item class="md-3-line" ng-repeat="item in forecast.list" ng-show="more">
+      <img ng-src="http://openweathermap.org/img/w/{{item.weather[0].icon}}.png" alt="Weather" class="md-avatar">
+
+      <div class="md-list-item-text">
+        <h3>
+          <i class="fa fa-map-marker" aria-hidden="true"></i>
+          {{forecast.city.name}}
+          (<small>{{forecast.city.country}}</small>)</h3>
+
+        <p>
+          <i class="fa fa-cloud" aria-hidden="true"></i>
+          {{'city.weather' | translate}} {{item.weather[0].description}}
+          <i class="fa fa-clock-o" aria-hidden="true"></i>
+          {{'city.time' | translate}} {{item.dt_txt}}
+          <i class="fa fa-thermometer-half " aria-hidden="true"></i>
+          {{'city.temperature' | translate}} {{item.main.temp}} Graus {{(temperature == 'metric' ?'Celsius' :'Fahrenheit')}}
         </p>
       </div>
       <md-divider inset></md-divider>

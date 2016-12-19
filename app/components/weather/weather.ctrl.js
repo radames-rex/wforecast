@@ -13,6 +13,7 @@
 
     $scope.forecast = '';
     $scope.temperature = 'metric';
+    $scope.more = false;
 
     var replaceSpecialChars = function(str) {
       str = str.replace(/[ÀÁÂÃÄÅ]/, "A");

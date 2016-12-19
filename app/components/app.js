@@ -2,14 +2,14 @@
 
 /**
  * @ngdoc overview
- * @name myRepositoriesApp
+ * @name wForecastApp
  * @description
- * # myRepositoriesApp
+ * # wForecastApp
  *
  * Main module of the application.
  */
 angular
-  .module('myRepositoriesApp', [
+  .module('wForecastApp', [
     'ngAnimate',
     'ngAria',
     'ngCookies',
@@ -22,14 +22,14 @@ angular
     'ngMaterial'
   ])
   .constant('PATH', {
-    main: '/myrepo',
-    repositories: '/repositories'
+    main: '/wforecast',
+    weather: '/weather'
   })
   .constant('REQUEST', {
-    github: {
-      url: 'https://api.github.com',
-      users: '/users/',
-      repos: '/repos'
+    api: {
+      url: 'http://api.openweathermap.org',
+      weatherbycity: '/data/2.5/weather?q=',
+      key: '&appid=4abbabeb92b59021a08e2cfa48d7ec0d'
     }
   })
   .config(function($stateProvider, $urlRouterProvider, $translateProvider, PATH) {
@@ -46,14 +46,14 @@ angular
       abstract: true,
       url: PATH.main,
       templateUrl: 'views/main.html'
-    }).state('main.repositories', {
-      url: PATH.repositories,
-      templateUrl: 'views/repositories.html',
-      controller: 'RepositoriesCtrl as ctrl'
+    }).state('main.weather', {
+      url: PATH.weather,
+      templateUrl: 'views/weather.html',
+      controller: 'WeatherCtrl as ctrl'
     });
 
     $urlRouterProvider.otherwise(function() {
-      return '/myrepo/repositories';
+      return '/wforecast/weather';
     });
 
   });

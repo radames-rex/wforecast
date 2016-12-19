@@ -63,6 +63,20 @@ body {
   padding: 32px;
 }
 
+.wforecast__tools{
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.wforecast__tools--item{
+  flex: 1;
+}
+
+.wforecast__tools--item md-input-container{
+  width: 90%;
+}
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {
@@ -83,5 +97,11 @@ body {
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {
     border-bottom: 0;
+  }
+
+  .wforecast__tools{
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
   }
 }

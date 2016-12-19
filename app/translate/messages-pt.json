@@ -8,6 +8,10 @@
 		}
 	},
   "city" : {
-    "search" : "Busque uma localidade..."
+    "search" : "Busque uma localidade...",
+    "alert" : "Veja aqui a previsão do tempo para sua cidade!",
+    "weather" : "Clima: ",
+    "time": "Data: ",
+    "temperature" : "Temperatura"
   }
 }

@@ -77,6 +77,13 @@ body {
   width: 90%;
 }
 
+.wforecast__results--default{
+  padding: 13%;
+  color: cadetblue;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {

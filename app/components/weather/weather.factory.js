@@ -12,9 +12,9 @@
   var WeatherFactory = function(REQUEST, RequestFactory, $q) {
     var WeatherFactory = {};
 
-    WeatherFactory.getWeather = function(city) {
+    WeatherFactory.getWeather = function(city, scale) {
       var defer = $q.defer();
-      RequestFactory.get(REQUEST.api.url + REQUEST.api.weatherbycity + city + REQUEST.api.key).then(function(data) {
+      RequestFactory.get(REQUEST.api.url + REQUEST.api.weatherbycity + city + REQUEST.api.scale + scale + REQUEST.api.key).then(function(data) {
         data = data.data;
         console.log(data);
         if (typeof data === 'object') {

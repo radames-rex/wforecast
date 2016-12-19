@@ -11,7 +11,8 @@
    */
   var WeatherCtrl = function($scope, WeatherFactory, $timeout) {
 
-    $scope.repos = [];
+    $scope.forecast = '';
+    $scope.temperature = 'metric';
 
     var replaceSpecialChars = function(str) {
       str = str.replace(/[ÀÁÂÃÄÅ]/, "A");
@@ -54,9 +55,11 @@
       }
     };
 
-    WeatherFactory.getWeather('Teresina').then(function(data){
-      $scope.repos = formatRepos(data);
-    });
+    $scope.searchForecast = function(){
+      WeatherFactory.getWeather($scope.city, $scope.temperature).then(function(data){
+        $scope.forecast = data;
+      });
+    };
 
   };
 

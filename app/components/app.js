@@ -29,6 +29,7 @@ angular
     api: {
       url: 'http://api.openweathermap.org',
       weatherbycity: '/data/2.5/weather?q=',
+      scale: '&units=',
       key: '&appid=4abbabeb92b59021a08e2cfa48d7ec0d'
     }
   })

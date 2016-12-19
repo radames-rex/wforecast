@@ -48,7 +48,7 @@
 	RequestFactory.$inject = ['$rootScope', '$http'];
 
 	angular
-	.module('myRepositoriesApp')
+	.module('wForecastApp')
 	.factory('RequestFactory', RequestFactory);
 
 })();

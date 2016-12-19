@@ -4,12 +4,12 @@
 
   /**
    * @ngdoc function
-   * @name myRepositoriesApp.controller:RepositoriesCtrl
+   * @name wForecastApp.controller:WeatherCtrl
    * @description
-   * # RepositoriesCtrl
-   * Controller of the myRepositoriesApp
+   * # WeatherCtrl
+   * Controller of the wForecastApp
    */
-  var RepositoriesCtrl = function($scope, RepositoriesFactory, $timeout) {
+  var WeatherCtrl = function($scope, WeatherFactory, $timeout) {
 
     $scope.repos = [];
 
@@ -54,15 +54,15 @@
       }
     };
 
-    RepositoriesFactory.getRepositories('radames-rex').then(function(data){
+    WeatherFactory.getWeather('Teresina').then(function(data){
       $scope.repos = formatRepos(data);
     });
 
   };
 
-  RepositoriesCtrl.$inject = ['$scope', 'RepositoriesFactory', '$timeout'];
+  WeatherCtrl.$inject = ['$scope', 'WeatherFactory', '$timeout'];
 
   angular
-    .module('myRepositoriesApp')
-    .controller('RepositoriesCtrl', RepositoriesCtrl);
+    .module('wForecastApp')
+    .controller('WeatherCtrl', WeatherCtrl);
 })();

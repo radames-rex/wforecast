@@ -2,7 +2,7 @@
 
 describe('Controller: RepositoriesCtrl', function () {
 
-  beforeEach(module('myRepositoriesApp'));
+  beforeEach(module('wForecastApp'));
 
   var RepositoriesCtrl,
     scope;

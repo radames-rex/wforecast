@@ -1,20 +1,32 @@
 'use strict';
 
-describe('Controller: RepositoriesCtrl', function () {
+describe('Controller: WeatherCtrl', function () {
 
   beforeEach(module('wForecastApp'));
 
-  var RepositoriesCtrl,
+  var WeatherCtrl,
     scope;
 
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    RepositoriesCtrl = $controller('RepositoriesCtrl', {
+    WeatherCtrl = $controller('WeatherCtrl', {
       $scope: scope
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function () {
-    expect(RepositoriesCtrl.awesomeThings.length).toBe(3);
+  it('deve inicializar com a temperatura em Celsius', function () {
+    expect(scope.temperature).toBe('metric');
+  });
+
+  it('deve inicializar mostrando apenas a previsão da data atual', function () {
+    expect(scope.more).toBe(false);
+    scope.resetFulls();
+    expect(scope.datalist[5].full).toBe(false);
+  });
+
+  it('deve fazer a busca de previsões do tempo', function () {
+    scope.city = 'Teresina';
+    scope.searchForecast();
+    expect(scope.forecast.list.length).toBeGreatherThan(0);
   });
 });

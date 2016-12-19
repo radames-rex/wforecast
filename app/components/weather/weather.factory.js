@@ -12,11 +12,11 @@
   var WeatherFactory = function(REQUEST, RequestFactory, $q) {
     var WeatherFactory = {};
 
+    // Faz uma requisição para recuperar os dados da previsão do tempo
     WeatherFactory.getWeather = function(city, scale) {
       var defer = $q.defer();
       RequestFactory.get(REQUEST.api.url + REQUEST.api.weatherbycity + city + REQUEST.api.scale + scale + REQUEST.api.key).then(function(data) {
         data = data.data;
-        console.log(data);
         if (typeof data === 'object') {
           defer.resolve(data);
         } else {
